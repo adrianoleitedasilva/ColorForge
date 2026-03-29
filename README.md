@@ -1,5 +1,7 @@
 # Color Forge
 
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+
 Gerador de paletas de cores moderno inspirado no Coolors.co — construído do zero com React + Vite.
 
 ## Funcionalidades
@@ -20,16 +22,16 @@ Gerador de paletas de cores moderno inspirado no Coolors.co — construído do z
 
 ## Tecnologias
 
-| Tecnologia | Uso |
-| --- | --- |
+| Tecnologia                     | Uso                                        |
+| ------------------------------ | ------------------------------------------ |
 | [React 18](https://react.dev/) | Biblioteca de UI e gerenciamento de estado |
-| [Vite 5](https://vitejs.dev/) | Bundler e servidor de desenvolvimento |
-| CSS Modules | Estilização com escopo por componente |
-| CSS Custom Properties | Design tokens e tema claro/escuro |
-| localStorage API | Persistência de paletas e preferências |
-| Web Clipboard API | Cópia de HEX para a área de transferência |
-| Drag and Drop API nativa | Reordenação dos swatches |
-| URL Hash (`window.location`) | Compartilhamento de paletas via link |
+| [Vite 5](https://vitejs.dev/)  | Bundler e servidor de desenvolvimento      |
+| CSS Modules                    | Estilização com escopo por componente      |
+| CSS Custom Properties          | Design tokens e tema claro/escuro          |
+| localStorage API               | Persistência de paletas e preferências     |
+| Web Clipboard API              | Cópia de HEX para a área de transferência  |
+| Drag and Drop API nativa       | Reordenação dos swatches                   |
+| URL Hash (`window.location`)   | Compartilhamento de paletas via link       |
 
 ## Como rodar
 
