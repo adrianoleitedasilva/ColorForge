@@ -1,31 +1,44 @@
 # Color Forge
 
-A modern color palette generator inspired by Coolors.co — built with React + Vite.
+Gerador de paletas de cores moderno inspirado no Coolors.co — construído do zero com React + Vite.
 
-## Features
+## Funcionalidades
 
-- **Generate** a 5-color palette with one click or by pressing `Space`
-- **Lock colors** to keep them when regenerating
-- **Copy HEX** codes with visual feedback
-- **Color picker** — click the edit icon on any swatch to fine-tune a color
-- **Contrast indicator** — WCAG AA/AAA rating per swatch
-- **Save palettes** to `localStorage` (up to 50)
-- **Share via URL** — palette encoded in the URL hash
-- **Export** in JSON, CSS variables, and Tailwind config formats
-- **Copy all** HEX codes at once
-- **Load saved palettes** back into the generator
-- **Drag-and-drop** to reorder swatches
-- **Undo / Redo** — full palette history (`Ctrl+Z` / `Ctrl+Shift+Z`)
-- **Dark / Light mode** toggle — preference saved in `localStorage`
+- **Gerar paleta** de 5 cores com um clique ou pressionando `Space`
+- **Travar cores** para mantê-las ao regenerar a paleta
+- **Copiar HEX** com feedback visual ao clicar
+- **Seletor de cores** — clique no ícone de edição em qualquer swatch para ajustar a cor manualmente
+- **Indicador de contraste** — classificação WCAG AA/AAA por swatch
+- **Salvar paletas** no `localStorage` (até 50 paletas)
+- **Compartilhar via URL** — paleta codificada no hash da URL
+- **Exportar** nos formatos JSON, variáveis CSS e configuração Tailwind
+- **Copiar todos** os códigos HEX de uma vez
+- **Carregar paletas salvas** de volta no gerador
+- **Arrastar e soltar** para reordenar os swatches
+- **Desfazer / Refazer** — histórico completo da paleta (`Ctrl+Z` / `Ctrl+Shift+Z`)
+- **Modo escuro / claro** — preferência salva no `localStorage`
 
-## Getting Started
+## Tecnologias
+
+| Tecnologia | Uso |
+| --- | --- |
+| [React 18](https://react.dev/) | Biblioteca de UI e gerenciamento de estado |
+| [Vite 5](https://vitejs.dev/) | Bundler e servidor de desenvolvimento |
+| CSS Modules | Estilização com escopo por componente |
+| CSS Custom Properties | Design tokens e tema claro/escuro |
+| localStorage API | Persistência de paletas e preferências |
+| Web Clipboard API | Cópia de HEX para a área de transferência |
+| Drag and Drop API nativa | Reordenação dos swatches |
+| URL Hash (`window.location`) | Compartilhamento de paletas via link |
+
+## Como rodar
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Acesse [http://localhost:5173](http://localhost:5173) no navegador.
 
 ## Build
 
@@ -34,33 +47,26 @@ npm run build
 npm run preview
 ```
 
-## Project Structure
+## Estrutura do projeto
 
 ```text
 src/
   components/
-    ColorSwatch/      # Individual color swatch with lock, copy, picker, drag
-    ExportModal/      # Export dialog (JSON / CSS / Tailwind)
-    Header/           # Top navigation bar with theme toggle
+    ColorSwatch/      # Swatch individual com trava, cópia, picker e drag
+    ExportModal/      # Modal de exportação (JSON / CSS / Tailwind)
+    Header/           # Barra de navegação com toggle de tema
   hooks/
-    usePalette.js     # Palette state, history (undo/redo), URL sync, reorder
-    useKeyboard.js    # Space / Ctrl+Z / Ctrl+Shift+Z shortcuts
-    useCopyFeedback.js# Clipboard copy with timed feedback
-    useTheme.js       # Dark/light mode with localStorage persistence
+    usePalette.js     # Estado da paleta, histórico (undo/redo), sync com URL e reordenação
+    useKeyboard.js    # Atalhos Space / Ctrl+Z / Ctrl+Shift+Z
+    useCopyFeedback.js# Cópia para clipboard com feedback temporário
+    useTheme.js       # Modo claro/escuro com persistência no localStorage
   pages/
-    PaletteGenerator/ # Main generator view
-    SavedPalettes/    # Saved palette grid
+    PaletteGenerator/ # View principal do gerador
+    SavedPalettes/    # Grade de paletas salvas
   utils/
-    colorUtils.js     # Color math (contrast, HSL, export formatters)
-    storage.js        # localStorage helpers
+    colorUtils.js     # Funções de cor (contraste, HSL, formatadores de exportação)
+    storage.js        # Helpers de localStorage
+    downloadUtils.js  # Utilitários de download de arquivos
   styles/
-    global.css        # Design tokens, reset, light theme overrides
+    global.css        # Design tokens, reset e overrides do tema claro
 ```
-
-## Roadmap
-
-- [ ] Harmony modes (complementary, analogous, triadic, etc.)
-- [ ] Import palette from image
-- [ ] More export formats (SCSS, Android XML, iOS Swift)
-- [ ] Color name lookup
-- [ ] Gradient preview from palette
