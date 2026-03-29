@@ -1,0 +1,94 @@
+
+# Dependencies
+
+node_modules/
+
+# Production
+
+dist/
+build/
+
+# Logs
+
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+
+.env
+.env.*
+!.env.example
+
+# Cache
+
+.cache/
+.parcel-cache/
+.vite/
+.eslintcache
+
+# IDEs and editors
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+
+.DS_Store
+Thumbs.db
+
+# Coverage
+
+coverage/
+
+# TypeScript
+
+*.tsbuildinfo
+
+# Optional npm cache directory
+
+.npm/
+
+# Optional eslint cache
+
+.eslintcache
+
+# Temporary folders
+
+tmp/
+temp/
+
+# Local history (VSCode extension)
+
+.history/
+
+# MacOS
+
+.AppleDouble
+.LSOverride
+
+# Linux
+
+*~
+
+# Windows
+
+ehthumbs.db
+Desktop.ini
+
+# Vercel / Netlify (se usar futuramente)
+
+.vercel/
+.netlify/

@@ -1,0 +1,247 @@
+.swatch {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius);
+  transition: flex var(--transition), transform 0.22s ease;
+  cursor: default;
+  animation: slideUp 0.3s ease backwards;
+}
+
+.swatch:hover {
+  flex: 1.15;
+}
+
+.swatch--locked {
+  outline: 2px solid rgba(255,255,255,0.35);
+  outline-offset: -2px;
+}
+
+.swatch-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--swatch-bg);
+  transition: background 0.4s ease;
+}
+
+.swatch-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 14px 12px;
+  color: var(--swatch-text);
+}
+
+/* Drag states */
+.swatch--dragging {
+  opacity: 0.4;
+  cursor: grabbing;
+}
+
+.swatch--drag-over::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 3px solid var(--accent);
+  border-radius: var(--radius);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Actions row */
+.swatch-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.swatch:hover .swatch-actions,
+.swatch--locked .swatch-actions {
+  opacity: 1;
+}
+
+.drag-handle {
+  cursor: grab;
+  background: rgba(0,0,0,0.18);
+}
+
+.drag-handle:hover {
+  background: rgba(0,0,0,0.32);
+  transform: scale(1.08);
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+.swatch-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--swatch-text);
+  background: rgba(0,0,0,0.18);
+  transition: background var(--transition), transform var(--transition);
+}
+
+.swatch-btn:hover {
+  background: rgba(0,0,0,0.32);
+  transform: scale(1.08);
+}
+
+.lock-btn--active {
+  background: rgba(0,0,0,0.28);
+}
+
+.remove-btn:hover {
+  background: rgba(200, 50, 50, 0.35) !important;
+}
+
+/* Info (center) */
+.swatch-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.swatch-hex-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.swatch-hex {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(0,0,0,0.18);
+  color: var(--swatch-text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.swatch-hex:hover {
+  background: rgba(0,0,0,0.30);
+}
+
+.swatch-hex--copied {
+  animation: pop 0.3s ease;
+}
+
+.hex-icon {
+  display: flex;
+  align-items: center;
+  opacity: 0.75;
+}
+
+.hex-value {
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+}
+
+.copy-toast {
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.8;
+  animation: fadeIn 0.2s ease;
+}
+
+/* Meta row (bottom) */
+.swatch-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.swatch:hover .swatch-meta {
+  opacity: 1;
+}
+
+.swatch-meta-value {
+  font-size: 0.72rem;
+  font-family: monospace;
+  opacity: 0.7;
+}
+
+.contrast-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+.contrast-badge--excellent { background: rgba(52, 211, 153, 0.25); color: #34d399; }
+.contrast-badge--good      { background: rgba(59, 130, 246, 0.25); color: #60a5fa; }
+.contrast-badge--moderate  { background: rgba(251, 191, 36, 0.25); color: #fbbf24; }
+.contrast-badge--poor      { background: rgba(239, 68, 68, 0.25);  color: #f87171; }
+
+/* Color picker */
+.picker-wrapper {
+  position: relative;
+}
+
+.picker-btn {
+  width: 28px;
+  height: 28px;
+}
+
+.color-picker-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 700px) {
+  .swatch {
+    min-height: 100px;
+    border-radius: var(--radius-sm);
+  }
+
+  .swatch:hover {
+    flex: 1;
+  }
+
+  .swatch-actions {
+    opacity: 1;
+  }
+
+  .swatch-meta {
+    opacity: 1;
+  }
+
+  .swatch-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .swatch-hex {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}

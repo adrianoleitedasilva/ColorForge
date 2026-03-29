@@ -1,0 +1,113 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: fadeIn 0.15s ease;
+}
+
+.modal {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 560px;
+  box-shadow: var(--shadow);
+  animation: slideUp 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.modal-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  transition: color var(--transition), background var(--transition);
+}
+
+.modal-close:hover {
+  color: var(--text);
+  background: var(--bg-3);
+}
+
+.modal-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 12px 24px 0;
+}
+
+.modal-tab {
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color var(--transition), background var(--transition);
+}
+
+.modal-tab:hover {
+  color: var(--text);
+  background: var(--bg-3);
+}
+
+.modal-tab.active {
+  background: var(--bg-3);
+  color: var(--text);
+}
+
+.modal-code {
+  flex: 1;
+  overflow: auto;
+  padding: 20px 24px;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: #a8b5d0;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-copy-export {
+  padding: 9px 20px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btn-copy-export:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
